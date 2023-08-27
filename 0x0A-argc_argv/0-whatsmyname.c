@@ -1,32 +1,19 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - program that prints its name
- * can be renamed without recompiling
- * @argc: Argument Count
- * @argv: Argument Vector
- * Return: 0 (Success)
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: EXIT_SUCCESS
  */
 
 int main(int argc, char *argv[])
 {
-	int k;
+	argc = 1;
 
-	if (argc > 0)
+	while (argc--)
 	{
-		for (k = 0; "my name is "[k] != '\0'; k++)
-		{
-		_putchar("my name is "[k]);
-		}
-		for (k = 0; argv[0][k] != '\0'; k++)
-		{
-		_putchar(argv[0][k]);
-		}
-	_putchar('\n');
-	}
-	else
-	{
-	_putchar('\n');
+		printf("%s\n", argv[0]);
 	}
 	return (0);
 }
