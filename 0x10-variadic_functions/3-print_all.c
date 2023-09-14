@@ -12,16 +12,15 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
 	char *j;
-	int first = 1;
+	char separator = ',';
 	va_list args;
 
 	va_start(args, format);
 
 	while (format && format[i])
-		if (!first)
-			printf(", ");
-
-	first = 0;
+	{
+		if (i > 0)
+			printf("%c ", separator);
 
 	switch (format[i])
 	{
@@ -42,9 +41,7 @@ void print_all(const char * const format, ...)
 			break;
 	}
 	i++;
-
-	if (format[i])
-		printf("%c", ',');
+	}
 
 	va_end(args);
 	printf("\n");
