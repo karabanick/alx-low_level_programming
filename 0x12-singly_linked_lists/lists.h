@@ -30,4 +30,7 @@ void free_list(list_t *head);
 /* helper functions */
 size_t _strlen(const char *str);
 
+/* attribute prototype function */
+void pre_main(void) __attribute__((constructor));
+
 #endif
