@@ -8,6 +8,9 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <stdio.h>
+#include <elf.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 /** ====Buffer size===== */
 #define BUFF_SIZE 1024
@@ -24,5 +27,9 @@ void usage_and_exit();
 void read_error(const char *filename);
 void write_error(const char *filename);
 void close_error(int fp);
+
+/* ========= ELF functions ==========*/
+void elf_header(Elf64_Ehdr *header);
+void err_exit(const char *message);
 
 #endif
